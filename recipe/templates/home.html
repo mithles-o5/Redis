@@ -1,0 +1,21 @@
+<h1>Hello from the list of recipes</h1>
+<h2>Here are all the veg recipes</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Recipe Name</th>
+            <th>More info</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{ recipe.category.name }}</td>  <!-- Fixed the capitalization here -->
+            <td>{{ recipe.name }}</td>
+            <td><a href="{% url 'Recipe-details' recipe.id %}">More info</a></td> <!-- Fixed URL name to 'Recipe-details' -->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
